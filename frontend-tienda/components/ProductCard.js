@@ -1,6 +1,8 @@
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const ProductCard = ({ product, data }) => {
+  const router = useRouter();
   const imageId = product.fields.productImage.sys.id;
   const imageUrl =
     data.Asset.find((asset) => asset.sys.id === imageId)?.fields.file.url ||
@@ -15,10 +17,9 @@ const ProductCard = ({ product, data }) => {
       />
       <div className="card-body">
         <h5 className="card-title">{product.fields.productTitle}</h5>
-        <p className="card-text">{product.fields.productDescription}</p>
         <p className="card-text">Price: ${product.fields.productPrice}</p>
-        <p className="card-text">Category: {product.fields.productCategory}</p>
       </div>
+      <button className="btn btn-success" onClick={() => router.push(`/product/${product.sys.id}`)}>Check this post</button>
     </div>
   );
 };
