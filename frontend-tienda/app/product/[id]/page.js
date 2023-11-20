@@ -2,10 +2,10 @@
 
 "use client";
 
+// Importa los estilos necesarios
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import ProductInfo from "@/components/ProductInfo";
-
+import ProductInfo from "/components/ProductInfo";
 const Product = () => {
   const [product, setProduct] = useState(null);
   const [imageData, setImageData] = useState(null);
@@ -37,7 +37,7 @@ const Product = () => {
   }, [id]);
 
   return (
-    <div className="container mt-4">
+    <div className={`container mt-4`}>
       <h1 className="mb-4">Detalles del Producto</h1>
       {product && imageData && (
         <ProductInfo product={product} imageData={imageData} />

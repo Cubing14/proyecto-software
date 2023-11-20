@@ -1,8 +1,10 @@
 "use client"
+
 import React, { useState } from "react";
 import Link from "next/link";
 
 const Navbar = () => {
+  // Estado para el término de búsqueda
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchChange = (event) => {
@@ -13,9 +15,14 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <Link className="navbar-brand" href="/">
-            Tienda el Hacendado
-          </Link>
+          <div className="navbar-brand" style={{ marginRight: "5px" }}>
+            <img
+              src="/ElHacendadoImg.jpg"
+              alt="El Hacendado Logo"
+              style={{ width: "130px", height: "auto" }}
+            />
+          </div>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -30,16 +37,13 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                {/* Enlace a la página de Inicio */}
+                <Link href="/" className="nav-link active" aria-current="page">
                   Inicio
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Nosotros
-                </a>
+                </Link>
               </li>
             </ul>
+            {/* Formulario de búsqueda */}
             <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
@@ -49,9 +53,13 @@ const Navbar = () => {
                 value={searchTerm}
                 onChange={handleSearchChange}
               />
-              <Link href={`/search?query=${encodeURIComponent(searchTerm)}`} passHref>
+              {/* Botón de búsqueda */}
+              <Link
+                href={`/search?query=${encodeURIComponent(searchTerm)}`}
+                passHref
+              >
                 <button className="btn btn-outline-success" type="submit">
-                  Search
+                  Buscar
                 </button>
               </Link>
             </form>

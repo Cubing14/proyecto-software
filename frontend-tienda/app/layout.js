@@ -1,6 +1,6 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "../components/Navbar";
 import { Inter } from "next/font/google";
-import "./page.module.css"
+import ".//page.module.css"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +15,8 @@ export default function RootLayout({ children }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Bootstrap demo</title>
+        <title>El Hacendado</title>
+        <link rel="icon" href="../app/hacendado.ico"></link>
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
