@@ -79,12 +79,12 @@ const Home = () => {
         ))}
       </div>
 
-      {/* Botón del carrito (fijo en la esquina inferior derecha) */}
+      {/* Botón del carrito */}
       <button className={styles.cartButton} onClick={handleOpenCartModal}>
         Ver Carrito ({cartItems.length})
       </button>
 
-      {/* Carrito de Compras (sobreposición) */}
+      {/* Carrito de Compras*/}
       {isCartModalOpen && (
         <div className={styles.cartModalContainer}>
           <CartModal cartItems={cartItems} onClose={handleCloseCartModal} />
