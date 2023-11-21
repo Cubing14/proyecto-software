@@ -47,7 +47,7 @@ const ProductCard = ({ product, data, onAddToCart }) => {
           </div>
           <div>
             <button className="btn btn-primary mr-2" onClick={handleAddToCart}>
-              Agregar al Carrito
+              Agregar a la lista
             </button>
             <button
               className="btn btn-success"

@@ -4,7 +4,7 @@ import React from 'react';
 const ShoppingCart = ({ cartItems }) => {
   return (
     <div className="shopping-cart">
-      <h2>Carrito de Compras</h2>
+      <h2>Lista de</h2>
       {cartItems.length > 0 ? (
         <table className="table">
           <thead>
