@@ -81,7 +81,7 @@ const Home = () => {
 
       {/* Botón del carrito */}
       <button className={styles.cartButton} onClick={handleOpenCartModal}>
-        Ver Carrito ({cartItems.length})
+        Ver lista ({cartItems.length})
       </button>
 
       {/* Carrito de Compras*/}
